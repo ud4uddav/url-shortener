@@ -1,0 +1,60 @@
+
+# URL Shortener
+
+A URL Shortener application built using Python and Flask.
+
+## Features
+
+- Convert long URLs into short URLs
+- Generate random short codes
+- Redirect users to original URLs
+- SQLite database integration
+- URL validation
+- Click tracking
+- URL statistics dashboard
+
+## Technologies
+
+- Python
+- Flask
+- SQLite
+- HTML
+- CSS
+- Jinja2
+- Git and GitHub
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone YOUR_REPOSITORY_URL
+cd url-shortener
+```
+
+Create a virtual environment:
+
+```bash
+python3 -m venv venv
+```
+
+Activate it on macOS:
+
+```bash
+source venv/bin/activate
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the application:
+
+```bash
+python app.py
+```
+
+Open http://127.0.0.1:5000 in your browser.
+

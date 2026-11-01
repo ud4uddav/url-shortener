@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>URL Shortener</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6fb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 450px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 14px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+
+        button {
+            background: #5b5ce2;
+            color: white;
+            padding: 14px 25px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #4445c5;
+        }
+
+        .result {
+            margin-top: 25px;
+            padding: 15px;
+            background: #eef2ff;
+            border-radius: 6px;
+            overflow-wrap: anywhere;
+        }
+
+        .result a {
+            color: #4445c5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>URL Shortener</h1>
+
+        <p>Make your long URLs short and simple.</p>
+
+        <form action="/shorten" method="POST">
+
+            <input
+                type="url"
+                name="original_url"
+                placeholder="Paste your long URL here"
+                required
+            >
+
+            <button type="submit">
+                Shorten URL
+            </button>
+
+        </form>
+
+        {% if short_url %}
+        {% if error %}
+    <p style="color: red;">{{ error }}</p>
+{% endif %}
+
+        <div class="result">
+
+            <h3>Your shortened URL:</h3>
+
+            <a href="{{ short_url }}" target="_blank">
+                {{ short_url }}
+            </a>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+</html>

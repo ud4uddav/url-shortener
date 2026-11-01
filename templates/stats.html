@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL Statistics</title>
+</head>
+
+<body>
+
+    <h1>URL Statistics</h1>
+
+    <table border="1" cellpadding="10">
+
+        <tr>
+            <th>Original URL</th>
+            <th>Short Code</th>
+            <th>Clicks</th>
+        </tr>
+
+        {% for url in urls %}
+
+        <tr>
+            <td>{{ url["original_url"] }}</td>
+            <td>{{ url["short_code"] }}</td>
+            <td>{{ url["clicks"] }}</td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    <a href="/">Back to Home</a>
+
+</body>
+</html>
