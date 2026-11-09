@@ -58,3 +58,14 @@ python app.py
 
 Open http://127.0.0.1:5000 in your browser.
 
+Test type	What it tests	URL Shortener example
+Unit test	One small function	Generate a six-character code
+Integration test	Multiple components working together	Flask route + SQLite
+Functional test	Application feature	Submit URL and get short URL
+End-to-end test	Complete user journey	Open website, submit URL, follow redirect
+
+For this project:
+- Testing a function that generates a short code is a unit test.
+- Testing a Flask route that saves to SQLite is an integration test.
+- Testing the complete shortening feature is a functional test.
+
