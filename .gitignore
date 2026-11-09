@@ -1,6 +1,8 @@
 venv/
 __pycache__/
 *.pyc
-urls.db
+.pytest_cache/
+.coverage
 .env
 .DS_Store
+urls.db
