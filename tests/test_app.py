@@ -8,15 +8,6 @@ def test_database_connection():
 
     connection.close()
 
-def add_numbers(a, b):
-    return a + b
-
-
-def test_add_numbers():
-    result = add_numbers(5, 3)
-
-    assert result == 8
-
 def test_homepage(client):
     response = client.get("/")
 

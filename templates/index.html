@@ -91,11 +91,11 @@
 
         </form>
 
-        {% if short_url %}
         {% if error %}
-    <p style="color: red;">{{ error }}</p>
-{% endif %}
+        <p style="color: red;">{{ error }}</p>
+        {% endif %}
 
+        {% if short_url %}
         <div class="result">
 
             <h3>Your shortened URL:</h3>
