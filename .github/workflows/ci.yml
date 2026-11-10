@@ -7,6 +7,10 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: read
+  id-token: write
+
 jobs:
   test-and-build:
     runs-on: ubuntu-latest
@@ -27,6 +31,17 @@ jobs:
 
       - name: Run pytest
         run: python -m pytest -v
+
+      - name: Configure AWS credentials
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: Verify AWS connection
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: aws sts get-caller-identity
 
       - name: Build Docker image
         run: docker build -t url-shortener .
